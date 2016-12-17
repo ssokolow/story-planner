@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <style>
+    body {
+      margin: calc(5vw - 3rem) 15vw;
+      padding: 1em;
+      max-width: 55em;
+    }
+    p { margin-top: 1vw; }
+
+    h1 { text-align: center;
+      margin-bottom: 1.5em;
+      font-size: 300%;
+      color: #777;
+    }
+    h1 .byline { font-size: 33%; }
+    h1 a { text-decoration: none; }
+
+    dd > ul { margin-top: 0.1em; }
+    dd > ul > li { margin-bottom: 0.1em; }
+    dd > ul > li > ul { margin-bottom: 0.3em; }
+    dt {
+      margin-top: 1em;
+      font-weight: bold;
+    }
+    abbr, .abbr { text-decoration: underline dotted; }
+
+  </style>
+</head>
+<body>
+  <h1>Story Planner (Mockup)
+    <div class="byline">By: <a href="http://ssokolow.com/">Stephan Sokolow</a></div></h1>
+  <dl>
+    <dt>Goal</dt>
+    <dd>A free, open-source tool to help keep track of things while planning and writing a story</dd>
+    <dt>Target Audience</dt>
+    <dd><ul>
+        <li>People with my <span class="abbr"
+            title="I'm an aspie who was too stubborn to just stick to programming. I need a mental wheelchair to write characters other than 'me, here, now'.">uncommon needs</span> in a story-planning aid</li>
+        <li>Open-source zealots (eg. me)</li>
+        <li>People on a tight budget</li>
+        <li>Fanfiction authors</li>
+        <li>Hobby writers</li>
+      </ul>
+    </dd>
+    <dt>Progress</dt>
+    <dd>An <a href="mockup/index.html">interactive concept mockup</a> which
+      you may experiment with. (Feedback welcome)</dd>
+    <dt>Features not yet mocked up</dt>
+    <dd><ul>
+        <li>Actual editing of content</li>
+        <li>Collapse/expand handles for section headers</li>
+        <li>Rebase on top of
+          <a href="http://tiddlywiki.com/">TiddlyWiki 5</a> to get...<ul>
+            <li>operation as either a server or a single, self-editing HTML
+              file</li>
+            <li>easy storage and cross-referencing of supporting
+              information.</li>
+            <li>full-text searching</li>
+        </ul></li>
+        <li>"Name placeholder" support with programmatic renaming</li>
+        <li>Alternative visualizations for the stream of scene cards:
+          <ul>
+            <li>In-universe timeline <a
+                href="http://visjs.org/timeline_examples.html">[1]</a>
+              <a href="http://www.simile-widgets.org/timeline/">[2]</a></li>
+            <li><span class="abbr" title="Words per subplot/character/etc.">
+                Topic-oriented</span> word-count pie-chart <a href="http://tiddlywiki.com/plugins/tiddlywiki/d3/">[1]</a></li>
+            <li>Whatever else I can think up a plausible use for...
+              <a href="https://d3js.org/">[1]</a>
+              <a href="https://dmitrybaranovskiy.github.io/raphael/">[2]</a></li>
+          </ul>
+        </li>
+        <li>Alternative visualiations for the wiki-style supporting data:
+          <ul>
+            <li>Concept map, <span class="abbr"
+                title="TODO: How would an author maintain this without it being a chore?">maybe?</span> <a href="http://tiddlymap.org/">[1]</a>
+              <a href="http://visjs.org/network_examples.html">[2]</a></li>
+          </ul>
+        </li>
+        <li>"Export upload-ready document" support in multiple formats:
+          <ul>
+            <li>Single-page HTML</li>
+            <li>One-page-per-chapter HTML</li>
+            <li>ePub ebook (<a href="https://calibre-ebook.com/">convertible<a/> to Mobipocket for Kindles)</li>
+            <li>OpenDocument
+              <a href="https://gottcode.org/focuswriter/">[1]</a>
+              <a href="https://www.libreoffice.org/">[2]</a>
+              <a href="http://abisource.com/">[3]</a>
+              <a href="https://en.wikipedia.org/wiki/Google_Docs,_Sheets_and_Slides">[4]</a>,
+              if it's not too difficult</li>
+            <li>Some human-editable textual format
+              (<a href="http://pandoc.org/">Markdown</a>?
+              <a href="http://www.sphinx-doc.org/"><abbr
+                  title="ReStructuredText">ReST</abbr></a>?
+              <a href="http://www.methods.co.nz/asciidoc/">asciidoc</a>?)</li>
+
+    </ul></dd>
+  </dl>
+</body>
+<!-- vim: sw=2 sts=2 : -->
+</html>
