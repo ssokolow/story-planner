@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+   <head>
+      <title>Story Planner Mockup</title>
+
+      <meta http-equiv="content-type" content="text/html;charset=utf-8">
+      <meta http-equiv="Content-Style-Type" content="text/css">
+
+      <link rel="stylesheet" href="tw5_shims/tw5.css" type="text/css" />
+      <link rel="stylesheet" href="tw5_shims/tw5_bodges.css" type="text/css" />
+      <link rel="stylesheet" href="base.css" type="text/css" />
+      <script src="tw5_shims/jquery-1.11.1.min.js" type="text/javascript"></script>
+      <script src="tw5_shims/handlebars-v1.3.0.js" type="text/javascript"></script>
+
+      <script src="tw5_shims/sample_data.js" type="text/javascript"></script>
+      <script src="tw5_shims/tw5_mock.js" type="text/javascript"></script>
+      <script src="tw5_shims/tw5_bodges.js" type="text/javascript"></script>
+      <script type="text/javascript" charset="utf-8">
+          jQuery.each(sample_data.tiddlers, function(idx, val) {
+              $tw.wiki.addTiddler(val);
+          });
+      </script>
+
+      <script src="base.js" type="text/javascript"></script>
+
+      <script id="axes-template" type="text/x-handlebars-template">
+         {{#each axes}}
+            <option>{{ this }}</option>
+         {{/each}}
+      </script>
+
+      <script id="header-template" type="text/x-handlebars-template">
+         <span class="column"
+               data-color="{{ fields.color }}">
+            <button class="btn-invisible header">{{ fields.title }}</button>
+            <span class="timeline">&nbsp;</span>
+         </span>
+      </script>
+
+      <script id="break-template" type="text/x-handlebars-template">
+         <h2 class="break"> {{ fields.title }}
+            <div class="word_count" title="Word Count">0</div>
+         </h2>
+         <button class="btn-invisible inserter">New Entry Here</button>
+      </script>
+
+      <script id="card-template" type="text/x-handlebars-template">
+         <div class="tw-tiddler-frame" data-id="{{ fields.title }}">
+            <div class="tw-tiddler-title"><h2 class="titlebar">
+               <span class="tw-tiddler-controls">
+                  <button class="btn-invisible tw-collapse"
+                     title="Collapse this tiddler" aria-label="collapse"
+                     style="font-size: 2ex">
+                           &#9650;
+                  </button>
+                  <button class="btn-invisible tw-expand"
+                     title="Expand this tiddler" aria-label="expand"
+                     style="font-size: 2ex">
+                           &#9660;
+                  </button>
+               </span>
+               <span class="title">
+                  {{ fields.title }}
+                  <span class="column-gems"></span>
+               </span>
+            </h2></div>
+            <div class="body">{{ fields.text }}</div>
+            <div class="word_count" title="Word Count">0</div>
+         </div>
+         <button class="btn-invisible inserter">New Entry Here</button>
+      </script>
+
+      <script id="gem-template" type="text/x-handlebars-template">
+         <span class="gem" data-id="{{ title }}"
+            style="background-color: {{ color }}">
+         </span>
+      </script>
+
+      <script id="new-button-template" type="text/x-handlebars-template">
+         <button aria-label="new {{ type }}" title="Create a new {{ type }}" class="btn-invisible"><svg height="12pt" width="12pt" viewBox="83 81 50 50" class="tw-image-new-button tw-image-button"><path d="M 101.25 112.5 L 101.25 127.5 C 101.25 127.5 101.25 127.5 101.25 127.5 L 101.25 127.5 C 101.25 129.156855 102.593146 130.5 104.25 130.5 L 111.75 130.5 C 113.406854 130.5 114.75 129.156854 114.75 127.5 L 114.75 112.5 L 129.75 112.5 C 131.406854 112.5 132.75 111.156854 132.75 109.5 L 132.75 102 C 132.75 100.343146 131.406854 99 129.75 99 L 114.75 99 L 114.75 84 C 114.75 82.343146 113.406854 81 111.75 81 L 104.25 81 C 104.25 81 104.25 81 104.25 81 C 102.593146 81 101.25 82.343146 101.25 84 L 101.25 99 L 86.25 99 C 86.25 99 86.25 99 86.25 99 C 84.593146 99 83.25 100.343146 83.25 102 L 83.25 109.5 C 83.25 109.5 83.25 109.5 83.25 109.5 L 83.25 109.5 C 83.25 111.156855 84.593146 112.5 86.25 112.5 Z"></path></svg>
+         </button>
+      </script>
+
+   </head>
+   <body>
+      <div class="tw-topbar tw-topbar-right">
+         <span class="word_count" title="Word Count">0</span>
+         <button id="global-collapse" class="btn-invisible global tw-collapse"
+            title="Collapse all tiddlers" aria-label="collapse tw-collapse">
+                  &#9650;
+         </button>
+         <button id="global-expand" class="btn-invisible global tw-expand"
+            title="Expand all tiddlers" aria-label="expand">
+                  &#9660;
+         </button>
+         <! -- TODO: Deduplicate definition of "collapse" icon. -->
+      </div>
+      <header id="column-header">
+         <select id="column-axis"></select>
+         <span id="columns">
+            <!-- TODO: Figure out what kind of "filters" I envisioned going here
+                   with "position: fixed" when I drew my original sketch. -->
+         </span>
+      </header>
+      <section class="story-river">
+         <button class="btn-invisible inserter">New Entry Here</button>
+      </section>
+   </body>
+</html>

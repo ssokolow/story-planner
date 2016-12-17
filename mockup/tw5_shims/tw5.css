@@ -1,0 +1,55 @@
+/** CSS rules taken straight from TiddlyWiki 5's Snow White theme with little
+ *  or no adjustment.
+ */
+
+body {
+    color: #333;
+    background-color: #ECECEC;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main,
+nav, section, summary {
+    display: block;
+}
+
+.story-river {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*width: 770px;*/
+    padding: 42px;
+}
+
+.tw-tiddler-frame {
+    padding: 28px 42px 42px;
+    margin-bottom: 28px;
+    background-color: #FFF;
+    border: 1px solid #FFF;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tw-tiddler-frame .tw-tiddler-controls { float: right; }
+
+.tw-site-title, .titlebar { margin-top: 0px; }
+
+html button { line-height: 1.2; }
+.btn-invisible {
+    padding: 0px;
+    margin: 0px;
+    background: none repeat scroll 0% 0% transparent;
+    border: medium none;
+    outline: none; /* XXX: How DOES TiddlyWiki actually accomplish this? */
+}
+.tw-tiddler-controls button {
+    margin: 0px 0px 0px 5px;
+    vertical-align: baseline;
+}
+
+.tw-topbar {
+    position: fixed;
+    z-index: 1200;
+}
+.tw-topbar-right {
+    top: 5px;
+    right: 29px;
+}

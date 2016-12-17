@@ -1,0 +1,108 @@
+/* Headers and Timelines (Fixed Elements) */
+#column-header {
+    position: fixed;
+    top: 0;
+    left: 42px;
+    height: 100%;
+    padding: 1em;
+}
+
+#columns { margin-left: 1em; }
+
+#columns .header {
+    -moz-border-radius: 1ex;
+    -webkit-border-radius: 1ex;
+    border-radius: 1ex;
+    color: white;
+    background-color: gray; /* Default if no unique color set */
+    padding: 0.5ex;
+    margin-right: 0.5ex;
+    display: inline-block;
+}
+/* TODO: Make the headers vertically staggered to use space more
+ *       efficiently?
+ */
+
+.column {
+    display: inline-block;
+    position: relative;
+    z-index: 10;
+    height: 100%;
+}
+
+.timeline {
+    position: absolute;
+    display: block;
+    top: 0.5ex;
+    height: 100%;
+    width: 1ex;
+    z-index: -1;
+    left: 50%;
+    margin-left: -0.5ex;
+    background-color: gray;
+}
+
+/* Prevent inserters from overlapping column headers (TODO: do this properly) */
+.story-river {
+    top: 36px;
+    padding-top: 12px;
+}
+
+/* Fix timeline rendering in Firefox */
+.tw-tiddler-frame {
+    position: relative;
+    z-index: 10;
+    padding-bottom: 28px;
+}
+
+/* Content (Entries and Other Scrolling elements) */
+
+.inserter {
+    position: relative;
+    font-size: 0.8em;
+    padding: 2px;
+    top: -16px;
+    margin-bottom: -4px;
+    width: 100%;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.4); /* TODO: Nicer background */
+
+    opacity: 0.0;
+    color: gray;    cursor: pointer;
+}
+.inserter:hover { opacity: 1.0; }
+
+.column-gems .gem {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    margin: 0 0.25ex;
+}
+
+h2.break {
+    color: gray;
+    border-bottom: 2px solid lightgray;
+    margin: 0;
+    position: relative;
+}
+h2.break + .inserter {
+    top: 0;
+    margin-bottom: 0;
+}
+.inserter + h2.break { margin-top: -12px; }
+.inserter:first-child { top: -12px; margin-bottom: -2px; }
+
+.tw-expand { display: none; }
+.story-river .word_count {
+    position: absolute;
+    bottom: 0;
+    right: 2px;
+}
+h2 .word_count {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.word_count { color: #aaa; }
+.tw-tiddler-frame .word_count { color: lightgray; }

@@ -1,0 +1,23 @@
+/** CSS rules which meet one of the following criteria:
+ *  - quickly hacked together to replicate elements of
+ *    the TiddlyWiki 5 Snow White theme when I didn't have time to track down
+ *    the rules responsible.
+ *  - Must be replaced with a proper solution but require knowledge which will
+ *    be gained only when I actually get this running in TW5.
+ *
+ *  (In other words, my CSS... but still shouldn't be needed when this gets
+ *   running inside TW5.)
+ */
+
+button { color: #ccc; }
+button svg { fill: #ccc; }
+button:hover { color: #888; }
+
+.btn-invisible { vertical-align: middle; } /* Quick prototyping hack */
+
+.tw-topbar-right button { font-size: 2em; }
+
+/* Make collapsing work well */
+.tw-tiddler-title h2 { margin-bottom: 0; }
+.tw-tiddler-frame .body { margin-top: 20px; }
+
