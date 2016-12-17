@@ -15,7 +15,10 @@
       font-size: 300%;
       color: #777;
     }
-    h1 .byline { font-size: 33%; }
+    h1 .byline {
+      display: block;
+      font-size: 33%;
+    }
     h1 a { text-decoration: none; }
 
     dd > ul { margin-top: 0.1em; }
@@ -31,14 +34,16 @@
 </head>
 <body>
   <h1>Story Planner (Mockup)
-    <div class="byline">By: <a href="http://ssokolow.com/">Stephan Sokolow</a></div></h1>
+    <span class="byline">By: <a href="http://ssokolow.com/">Stephan Sokolow</a></span></h1>
   <dl>
     <dt>Goal</dt>
-    <dd>A free, open-source tool to help keep track of things while planning and writing a story</dd>
+    <dd>A free, open-source tool to help keep track of things while planning
+      and writing a story</dd>
     <dt>Target Audience</dt>
     <dd><ul>
         <li>People with my <span class="abbr"
-            title="I'm an aspie who was too stubborn to just stick to programming. I need a mental wheelchair to write characters other than 'me, here, now'.">uncommon needs</span> in a story-planning aid</li>
+            title="I'm an aspie who was too stubborn to just stick to programming. I need a mental wheelchair to write characters other than 'me, here, now'.">uncommon needs</span>
+          in a story-planning aid</li>
         <li>Open-source zealots (eg. me)</li>
         <li>People on a tight budget</li>
         <li>Fanfiction authors</li>
@@ -68,16 +73,18 @@
                 href="http://visjs.org/timeline_examples.html">[1]</a>
               <a href="http://www.simile-widgets.org/timeline/">[2]</a></li>
             <li><span class="abbr" title="Words per subplot/character/etc.">
-                Topic-oriented</span> word-count pie-chart <a href="http://tiddlywiki.com/plugins/tiddlywiki/d3/">[1]</a></li>
+                Topic-oriented</span> word-count pie-chart
+              <a href="http://tiddlywiki.com/plugins/tiddlywiki/d3/">[1]</a></li>
             <li>Whatever else I can think up a plausible use for...
               <a href="https://d3js.org/">[1]</a>
               <a href="https://dmitrybaranovskiy.github.io/raphael/">[2]</a></li>
           </ul>
         </li>
-        <li>Alternative visualiations for the wiki-style supporting data:
+        <li>Alternative visualizations for the wiki-style supporting data:
           <ul>
             <li>Concept map, <span class="abbr"
-                title="TODO: How would an author maintain this without it being a chore?">maybe?</span> <a href="http://tiddlymap.org/">[1]</a>
+                title="TODO: How would an author maintain this without it being a chore?"
+                >maybe?</span> <a href="http://tiddlymap.org/">[1]</a>
               <a href="http://visjs.org/network_examples.html">[2]</a></li>
           </ul>
         </li>
@@ -85,7 +92,8 @@
           <ul>
             <li>Single-page HTML</li>
             <li>One-page-per-chapter HTML</li>
-            <li>ePub ebook (<a href="https://calibre-ebook.com/">convertible<a/> to Mobipocket for Kindles)</li>
+            <li>ePub ebook (<a href="https://calibre-ebook.com/">convertible</a>
+                  to Mobipocket for Kindles)</li>
             <li>OpenDocument
               <a href="https://gottcode.org/focuswriter/">[1]</a>
               <a href="https://www.libreoffice.org/">[2]</a>
@@ -97,7 +105,7 @@
               <a href="http://www.sphinx-doc.org/"><abbr
                   title="ReStructuredText">ReST</abbr></a>?
               <a href="http://www.methods.co.nz/asciidoc/">asciidoc</a>?)</li>
-
+          </ul>
     </ul></dd>
   </dl>
 </body>
