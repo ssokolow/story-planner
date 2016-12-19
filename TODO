@@ -1,6 +1,9 @@
 Potentially useful components:
 - https://github.com/felixhayashi/TW5-TiddlyMap
+  (Does this meet my needs for comfortably concept-mapping supporting details?)
 - http://gitgraphjs.com/
+  (Would it be helpful to offer this as a way to visualize how groups of
+   characrers meet and separate as scenes progress?)
 
 Ideas for consideration:
 - The scroll position should be tethered to a point within the document so that
