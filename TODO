@@ -1,3 +1,11 @@
 Potentially useful components:
 - https://github.com/felixhayashi/TW5-TiddlyMap
 - http://gitgraphjs.com/
+
+Ideas for consideration:
+- The scroll position should be tethered to a point within the document so that
+  fiddling with the hide/show controls can't lose your place.
+- The selector header should be be fixed at the top so you don't have to scroll
+  to the top to hide/show things.
+- It should apply "sticky" behaviour to the current section header so you don't
+  need to scroll to figure out which chapter you're currently looking at.
