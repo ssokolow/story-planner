@@ -6,9 +6,15 @@ Potentially useful components:
    characrers meet and separate as scenes progress?)
 
 Ideas for consideration:
+- Provide a tool for cutting scene blocks in two.
 - The scroll position should be tethered to a point within the document so that
   fiddling with the hide/show controls can't lose your place.
+- Your place should be kept when switching between narrative and timeline view.
 - The selector header should be be fixed at the top so you don't have to scroll
   to the top to hide/show things.
 - It should apply "sticky" behaviour to the current section header so you don't
   need to scroll to figure out which chapter you're currently looking at.
+- Support real-time collaborative editing as an option.
+  - https://en.wikipedia.org/wiki/Piece_table
+
+https://www.fimfiction.net/blog/816703/how-do-you-guys-keep-track-of-a-large-cast
