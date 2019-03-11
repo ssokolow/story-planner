@@ -53,6 +53,7 @@
     position: relative;
     z-index: 10;
     padding-bottom: 28px;
+    margin-bottom: 0;
 }
 
 /* Content (Entries and Other Scrolling elements) */
@@ -60,9 +61,7 @@
 .inserter {
     position: relative;
     font-size: 0.8em;
-    padding: 2px;
-    top: -16px;
-    margin-bottom: -4px;
+    padding: 1.5ex;
     width: 100%;
     text-align: center;
     background: rgba(255, 255, 255, 0.4); /* TODO: Nicer background */
