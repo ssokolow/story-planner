@@ -25,7 +25,7 @@ var sample_data = {
         {  title: "The Travel Agent", color: "#8BBEC7", tags: ['Characters'] },
         {  title: "The Gardener", color: "#D5AD34", tags: ['Characters'] },
         {
-            title: "Day 1",
+            title: "Chapter 1",
             text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel lectus egestas eros bibendum ultrices. Sed non nulla ac magna mollis tincidunt et tincidunt orci. Ut ut turpis quis lacus tincidunt vulputate. Duis tincidunt tortor at dolor fermentum pulvinar. In nisl justo, semper sed sollicitudin sed, convallis ut tortor. In viverra nunc dapibus neque condimentum ac laoreet quam suscipit. Nullam imperdiet dignissim arcu, eget viverra eros lobortis sed. In tincidunt, elit eu gravida condimentum, felis magna faucibus mauris, sed faucibus lectus est quis lacus. Nunc orci dui, congue fringilla iaculis vitae, convallis et mi. Integer auctor lectus ut felis ornare tincidunt.",
             tags: ['timeline'],
             card_type: 'break',
@@ -49,7 +49,7 @@ var sample_data = {
             text: "Suspendisse massa ante, tristique sit amet dapibus eu, laoreet eu lacus. Maecenas ornare facilisis velit eu elementum. Curabitur euismod nisl nec urna rutrum pretium mattis dui ultricies. Morbi scelerisque lacinia magna, bibendum pellentesque sapien viverra nec. Nullam mollis vestibulum luctus. Suspendisse faucibus condimentum iaculis. Nunc malesuada consectetur consequat. Maecenas aliquet tortor a libero tincidunt rhoncus. Duis ut nisl sem. Nam cursus faucibus ante, vel tincidunt odio cursus nec. Donec faucibus, neque non fermentum vehicula, nisl lectus fermentum purus, eu ultrices eros elit ac odio. Quisque at lorem at justo mollis congue. Duis dolor urna, tempor vitae cursus nec, scelerisque a velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
             tags: ['timeline', 'Mystery Corpse'],
         },{
-            title: "Day 2",
+            title: "Chapter 2",
             text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel lectus egestas eros bibendum ultrices. Sed non nulla ac magna mollis tincidunt et tincidunt orci. Ut ut turpis quis lacus tincidunt vulputate. Duis tincidunt tortor at dolor fermentum pulvinar. In nisl justo, semper sed sollicitudin sed, convallis ut tortor. In viverra nunc dapibus neque condimentum ac laoreet quam suscipit. Nullam imperdiet dignissim arcu, eget viverra eros lobortis sed. In tincidunt, elit eu gravida condimentum, felis magna faucibus mauris, sed faucibus lectus est quis lacus. Nunc orci dui, congue fringilla iaculis vitae, convallis et mi. Integer auctor lectus ut felis ornare tincidunt.",
             tags: ['timeline'],
             card_type: 'break',
