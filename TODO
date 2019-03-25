@@ -16,5 +16,10 @@ Ideas for consideration:
   need to scroll to figure out which chapter you're currently looking at.
 - Support real-time collaborative editing as an option.
   - https://en.wikipedia.org/wiki/Piece_table
+- Any analyses which are unsuitable for as-you-type application should be
+  applicable with a single press of a "check for issues" button.
+  - Detect spots in the story where, after they've been introduced,  a particular
+    subplot or character spends an unusual amount of story time without being
+    touched on. (ie. statistically analyze the smooth weaving of subplots.)
 
 https://www.fimfiction.net/blog/816703/how-do-you-guys-keep-track-of-a-large-cast
