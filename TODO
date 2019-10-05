@@ -1,3 +1,17 @@
+Idea for how to detect when to jump focus to the next section on Up/Down keypress:
+1. Get the current caret position via the selection API
+2. Get a selection object for the end of the object
+3. Check whether they have the same top/bottom edge on their Range.prototype.getClientRects()
+
+If I also need it for textareas and it doesn't work for them, look into "create
+a mirror" as an alternative way, based on getting info on soft word-wrap:
+https://stackoverflow.com/a/21171089/435253
+
+document.execCommand('defaultParagraphSeparator', false, 'p');
+-- https://stackoverflow.com/a/35634418/435253
+
+https://medium.com/compass-true-north/a-dancing-caret-the-unknown-perils-of-adjusting-cursor-position-f252734f595e
+
 Potentially useful components:
 - https://github.com/felixhayashi/TW5-TiddlyMap
   (Does this meet my needs for comfortably concept-mapping supporting details?)
@@ -18,8 +32,38 @@ Ideas for consideration:
   - https://en.wikipedia.org/wiki/Piece_table
 - Any analyses which are unsuitable for as-you-type application should be
   applicable with a single press of a "check for issues" button.
-  - Detect spots in the story where, after they've been introduced,  a particular
-    subplot or character spends an unusual amount of story time without being
-    touched on. (ie. statistically analyze the smooth weaving of subplots.)
+  - Detect spots in the story where, after they've been introduced, a
+    particular subplot or character spends an unusual amount of story time
+    without being touched on. (ie. statistically analyze the smooth weaving
+    of subplots.)
+  - Detect odd numbers of double-quotes or smart quotes (single or
+    double) which don't pair up properly.
+- Suggest that users add a `TODO` tag and provide an option for showing *only*
+  sections which match said tag. Then it becomes really easy to leave notes
+  for oneself and get a listing of what remains.
+  - I still eventually want explicit support for inline TODO elements, though.
+    (Because that'll allow them to be hidden/shown on export as an option.)
+  - Maybe a "Note" element that you can type TODO: into would do?
 
 https://www.fimfiction.net/blog/816703/how-do-you-guys-keep-track-of-a-large-cast
+
+
+Dark UIs are ill-advised for this kind of project, so I'll wait until I'm ready
+to just offer FocusWriter-style full-blown custom theming.
+-- https://www.toptal.com/designers/ui/dark-ui
+
+For designing presets, see...
+- https://medium.com/eightshapes-llc/light-dark-9f8ea42c9081
+- https://www.kooslooijesteijn.net/blog/dark-mode-design-considerations
+- https://www.webdesignerdepot.com/2009/08/the-dos-and-donts-of-dark-web-design/
+
+---
+
+I just thought of another idea for the story tool that I wanted your opinions on.
+For the "note cards" that you can quickly pull up and dismiss while writing, if I
+allow the author to enter a bunch of concise "Name: Value" pairs above the freeform
+text, it'd make it possible for an author to request a comparison chart between
+characters, where each column is a character and each row is a field being compared.
+The part I'd still need to refine is how best to ensure consistency in fields names
+so they all show up as the same row when appropriate while still being convenient
+to work with.

@@ -33,12 +33,12 @@
   </style>
 </head>
 <body>
-  <h1>Story Planner (Mockup)
+  <h1>Story Planner
     <span class="byline">By: <a href="http://ssokolow.com/">Stephan Sokolow</a></span></h1>
   <dl>
     <dt>Goal</dt>
     <dd>A free, open-source tool to help keep track of things while planning
-      and writing a story</dd>
+      and writing a story or other complex written work.</dd>
     <dt>Target Audience</dt>
     <dd><ul>
         <li>People with my <span class="abbr"
@@ -50,66 +50,256 @@
         <li>Hobby writers</li>
       </ul>
     </dd>
-    <dt>Progress</dt>
-    <dd>An <a href="mockup/index.html">interactive concept mockup</a> which
-      you may experiment with.
-      (<a href="https://github.com/ssokolow/story-planner/issues">Feedback welcome</a>)</dd>
-    <dt>Features not yet mocked up</dt>
+    <dt>Design Philosophy</dt>
     <dd><ul>
-        <li>Actual editing of content</li>
-        <li>Collapse/expand handles for section headers</li>
-        <li>Rebase on top of
-          <a href="http://tiddlywiki.com/">TiddlyWiki 5</a> to get...<ul>
-            <li>operation as either a server or a single, self-editing HTML
-              file</li>
-            <li>easy storage and cross-referencing of supporting
-              information.</li>
-            <li>full-text searching</li>
-        </ul></li>
-        <li>Support for switching cards between chronological and narrative ordering in the default visualization</li>
-        <li>"Name placeholder" support with programmatic renaming</li>
-        <li>Alternative visualizations for the stream of scene cards:
-          <ul>
+        <li>If a user doesn't use a given feature, its existence shouldn't be a
+          burden on the UI elements and interaction flows they <em>do</em>
+          use.</li>
+        <li>The primary goal is to <em>use</em> your notes, not to get carried
+          away with organizing them. Don't forget that.</li>
+        <li>Don't just pile together desired features. Consider workflows and
+          design the UI to streamline them.</li>
+        <li>Despite being minimalist, the UI must be discoverable.</li>
+      </ul>
+      </dd>
+    <dt>Progress</dt>
+    <dd><p>An <a href="mockup/index.html">interactive concept mockup</a> which
+      you may experiment with, and some un-published progress on translating
+      it to a functioning Django-based prototype
+      (<a href="screenshot_2019-10-04.png">screenshot</a>)
+      before dogfooding and iterating on the design.
+      (<a href="https://github.com/ssokolow/story-planner/issues">Feedback welcome</a>)</p>
+      <p>The Django prototype also features a
+        <a href="screenshot_2019-10-04_2.png">distraction-free view mode</a>
+        which is key to the goal of not burdening users with the existence
+        of features they don't use.</p>
+      <p>It is quite literally the same page as the normal mode, but with
+        different CSS rules active. The intent being to shape my conception of
+        the interface into something powerful and well-suited to
+        keyboard-centric writing activities but still looking good and feeling
+        natural for a more traditional mouse-centric look and feel.</p>
+    </dd>
+    <dt>Features not yet in either version</dt>
+    <dd><dl>
+        <dt>Completing Mocked-up Features</dt>
+        <dd><ul>
+          <li>Actual editing of content</li>
+          <li>Collapse/expand handles for chapter/section headers</li>
+          <li>Generalize all chapter-related functionality (headers,
+            per-chapter HTML, etc.) to support a hierarchy of sections.</li>
+        </ul></dd>
+        <dt>"Keyboard-first" Interaction</dt>
+        <dd><ul>
+            <li>Hotkey-triggered context menus with "type to filter, then
+              press Enter" selection</li>
+            <li>Automatic highlighting/hyperlinking (in a subdued way) of
+              words/phrases marked as being associated with supplemental
+              information, allowing access to reference materials by
+              positioning  the cursor over or next to such a link and
+              pressing a hotkey.</li>
+            <li>"Name placeholder" support with programmatic renaming</li>
+        </ul></dd>
+        <dt>Integrated Reference Material Handling</dt>
+        <dd><ul>
+            <li>Basic wiki functionality</li>
+            <li>Comparison matrix view for <code>key=value</code> data such as
+              personality traits.</li>
+            <li>Consider whether a concept map
+                <a href="http://tiddlymap.org/">[1]</a>
+              <a href="http://visjs.org/network_examples.html">[2]</a>
+              view would be useful enough to justify and how much
+              the maintenance burden for the user could be minimized.</li>
+          </ul>
+        </dd>
+        <dt><em>Reasonable</em> Alternative Visualizations</dt>
+        <dd><ul>
+            <li><span class="abbr" title="Words per subplot/character/etc.">
+                Topic-oriented</span> word-count charts and graphs
+              <a href="https://d3js.org/">[1]</a>
+              <a href="http://tiddlywiki.com/plugins/tiddlywiki/d3/">[2]</a>
+              for identifying things such as unbalanced amounts of focus on
+              different characters.</li>
             <li>In-universe timeline <a
                 href="http://visjs.org/timeline_examples.html">[1]</a>
               <a href="http://www.simile-widgets.org/timeline/">[2]</a></li>
-            <li><span class="abbr" title="Words per subplot/character/etc.">
-                Topic-oriented</span> word-count pie-chart
-              <a href="http://tiddlywiki.com/plugins/tiddlywiki/d3/">[1]</a></li>
-            <li>Whatever else I can think up a plausible use for...
-              <a href="https://d3js.org/">[1]</a>
-              <a href="https://dmitrybaranovskiy.github.io/raphael/">[2]</a></li>
-          </ul>
-        </li>
-        <li>Alternative visualizations for the wiki-style supporting data:
-          <ul>
-            <li>Concept map, <span class="abbr"
-                title="TODO: How would an author maintain this without it being a chore?"
-                >maybe?</span> <a href="http://tiddlymap.org/">[1]</a>
-              <a href="http://visjs.org/network_examples.html">[2]</a></li>
-          </ul>
-        </li>
-        <li>"Export upload-ready document" support in multiple formats:
-          <ul>
+            <li>Support for switching cards between chronological and narrative
+              ordering in the default visualization</li>
+            <li>Maybe support for importing maps and pushpinning events
+              onto them like in <a href="https://www.campfiretechnology.com/">Campfire</a>?
+              <p>If so, I'll probably want to also include something with an
+              interface like the measure tool in Google Earth but enhanced to
+              quickly calculate travel <em>times</em> in the face of varying
+              terrain, states of restedness, and modes of conveyance.</p></li>
+          </ul></dd>
+        <dt>Upload-ready Export Support</dt>
+        <dd><ul>
             <li>Single-page HTML</li>
             <li>One-page-per-chapter HTML</li>
             <li>ePub ebook (<a href="https://calibre-ebook.com/">convertible</a>
                   to Mobipocket for Kindles)</li>
-            <li>OpenDocument
+            <li>OpenDocument for compatibility with other tools
               <a href="https://gottcode.org/focuswriter/">[1]</a>
               <a href="https://www.libreoffice.org/">[2]</a>
               <a href="http://abisource.com/">[3]</a>
               <a href="https://en.wikipedia.org/wiki/Google_Docs,_Sheets_and_Slides">[4]</a>,
-              if it's not too difficult</li>
+              if it's not too difficult.</li>
             <li>Some human-editable textual format
               (<a href="http://pandoc.org/">Markdown</a>?
               <a href="http://www.sphinx-doc.org/"><abbr
                   title="ReStructuredText">ReST</abbr></a>?
               <a href="http://www.methods.co.nz/asciidoc/">asciidoc</a>?)</li>
+            <li>Explore the feasibility of offering support for sandboxed
+              export plugins to support things like fimfiction-style BBcode or
+              specially-converted HTML to work around Fanfiction.net's decision
+              to do things like silently stripping <code>%</code>.</li>
+            <li>Explore the feasibility of offering reliable HTML import support.</li>
+          </ul></dd>
+          <dt>Easy Installation and Collaboration</dt>
+          <dd><ul>
+            <li><s>Rebase on top of
+                <a href="http://tiddlywiki.com/">TiddlyWiki 5</a> to get...</s><ul>
+                <li><s>operation as either a server or a single, self-editing HTML
+                    file</s></li>
+                <li><s>easy storage and cross-referencing of supporting
+                    information.</s></li>
+                <li><s>full-text searching</s></li>
+              </ul>
+
+              <p>(Maybe for version 2.0. Gaining the requisite knowledge of
+              TiddlyWiki internals was a demotivating factor for
+              <strong>years</strong>. It's easier for me to just reinvent the
+              relevant wiki and search stuff on top of Django and use something
+              like <a href="http://py2exe.org/">py2exe</a> for Windows users.)</p></li>
+          </ul></dd>
+      </dl>
+    </dd>
+    <dt>Known Competitors</dt>
+    <dd><p>To date, I have not found any tool that follows the design
+        philosophy that I'm trying to embody and all of the closest ones
+        fail the "is it free so I can convince fanfiction authors to try it?"
+        test.</p>
+      <p>However, nothing exists in a vacuum, so here is an overview of the
+        prior art I have encountered, in the order I encountered it:</p>
+      <dl>
+        <dt><a href="http://www.writerscafe.co.uk/">Anthemion Writer's Café</a></dt>
+        <dd><p>Back in the early 2000s, the precursor product to this
+            (StoryLines 1.x) was my inspiration for this project.</p>
+          <p>While I thought the overall effect of the timeline widget was
+            cool, I lacked the vocabulary to call it "counter-productively
+            skeuomorphic", and could only say that I didn't like the way it
+            precluded putting a useful amount of text in each note card
+            and that something just felt unsatisfying about horizontal being
+            the primary scrolling direction on a desktop application.</p>
+          <p>If StoryLines 2.x (which is part of Writer's Café) works for you,
+            that's good, but I'd never be satisfied with that design without
+            the ability to zoom and pan as naturally as you can with a real
+            corkboard and a pair of legs. That's what I mean by
+            counter-productively skeuomorphic. It chases a UI paradigm that
+            it's not technically possible to properly
+            implement with current hardware.</p>
+        </dd>
+        <dt><a href="https://www.lyx.org/">LyX</a> (Free)</dt>
+        <dd>While it's much less a total document production aid and more
+          a semantic word processor, LyX <em>was</em> my inspiration for various
+          features related to writing rather than planning.
+
+          <p>Examples include the semi-automatic generation of an outline,
+            the merits to a <abbr title="What You See Is What You Mean"
+              >WYSIWYM</abbr> approach to text composition (ie. font changes
+            should indicate semantic rather than presentational details), and
+            enforcing semantic-ness by discarding repeated presses of the Enter
+            key or Spacebar while displaying an explanatory message in the
+            status bar.</p>
+          <p>If nothing else, in this day and age of online publication,
+            WYSIWYG is an illusion. You can't control the screen size of the
+            reader's chosen device and you may be posting on a site which
+            only gives you a restricted subset of semantic markup and
+            imposes its own theme on your work, so why not just focus on
+            the semantics to begin with, trust the browser to be smart enough
+            to lay it out "well enough", and avoid getting mired in
+            tweaking trivial presentation details?</p>
+          <p>If you really need to get the typesetting and other presentation
+            details just perfect, that's something for after the composition
+            is done anyway.</p>
+        </dd>
+        <dt><a href="https://gottcode.org/focuswriter/">FocusWriter</a> (Free)</dt>
+        <dd>FocusWriter is a distraction-free writing tool. However, it is
+          unlike other such tools in that it recognizes that features exist
+          for a reason.
+          <p>I was introduced to it by an article named <a
+               href="https://writingonlinux.wordpress.com/2011/01/17/focuswriter-and-why-i-now-despise-writeroom/"
+               >FocusWriter and how I came to despise WriteRoom</a> and it
+             helped to shape my conception of what a distraction-free writing
+             option could be in a more featureful system.</p>
+          <p>While it <em>is</em> primarily a rich text editor, it is notable
+            in offering a primitive semi-automatic outliner, a tracker for
+            daily writing goals, timers, advanced "word count" support,
+            and support for saved sessions, all accessed via panels which
+            auto-hide at the edges of the screen when in fullscreen mode.</p>
+        </dd>
+        <dt><a href="https://www.literatureandlatte.com/scrivener/overview">Scrivener</a></dt>
+        <dd><p>I was made aware of this apparently popular tool after the initial
+          draft of my design.</p>
+          <p>There's no Linux version and I've actively tried to avoid looking
+            too much into it to avoid copying ideas, but the tiny screenshots
+            and described features from the site's landing page suggest that my
+            experimentation with my developing prototype is driving me in a
+            similar direction.</p>
+          <p>(eg. A tool that replaces your word processor and aids out-of-order
+            writing, includes integrated storage for reference materials, and
+            can export to ready-to-upload formats.)</p>
+        </dd>
+        <dt><a href="https://www.campfiretechnology.com/">Campfire</a></dt>
+        <dd><p>I discovered this tool via a sponsorship on a
+            <a href="https://www.youtube.com/watch?v=lBtvS5yhTA8">Shadiversity video</a>
+            I watched on September 29th, 2019.</p>
+          <p>The download version doesn't work on Linux and I'm not interested
+            in Software as a Service but there are three things I can comment on
+            based on the preview in the sponsorship blurb:</p>
+          <ul>
+            <li><p>I get the impression it probably isn't the easiest interface
+                to navigate with both hands on the keyboard.</p></li>
+            <li><p>Maybe it's just because I'm an aspie, but their character bio
+              view worries me. It feels like something where you could spend
+              far too much time distracting yourself from your content to focus
+              on customizing fine presentation details your readers will never
+              see.</p>
+
+              <p>Until user testing has proven otherwise, I'll continue to
+                assert that a simple wiki page (markup or WYSIWYG) with
+                support for using comfortable definition list markup to specify
+                key-value pairs is closer to the ideal for
+                <abbr title="Return on Investment">ROI</abbr>.</p>
+              <p>However, it does prompt me to think more deeply on how best
+                to allow the author to specify a template so they don't miss
+                certain fields in certain bio cards. At the time, all I had
+                was ensuring support for in-place editing in my plans for a
+                comparison matrix which, by its very nature as a table, shows
+                empty cells for missing data. (The comparison matrix originally
+                being intended for checking whether you're making your
+                characters too similar.)</p>
+            </li>
+            <li><p>Their ad deprived me of the ability to come up with the idea
+                of integrated mapping on my own schedule, if it proved fitting.</p>
+
+              <p>(In order to keep the UI focused and friendly for someone who
+              isn't yet sold on the idea of using more than a text editor and
+              their own memory, I'm being conservative about planning for new
+              features. See also
+              <a href="https://en.wikipedia.org/wiki/You_aren%27t_gonna_need_it">
+                <abbr title="You aren't gonna need it">YAGNI</abbr></a>.)</p></li>
           </ul>
-          <li>Generalize all chapter-related functionality (headers,
-            per-chapter HTML, etc.) to support a hierarchy of sections.</li>
-    </ul></dd>
+        </dd>
+    </dl>
+    <p>I don't intend to consider investigating my competitors more deeply until
+      my own original experimentation for how to design a good UI starts to
+      run dry.</p>
+    <p>However, to do my due diligence, I did skim through the options
+      listed on <a href="https://alternativeto.net/">alternativeTo.net</a> after
+      discovering Campfire. Not one of the free options had the design philosophy
+      I'm aiming for. At the closest, they still looked more like programmer's
+      text editors with distraction-free modes sometimes bolted on.</p>
+    </dd>
   </dl>
 </body>
 <!-- vim: set sw=2 sts=2 : -->
